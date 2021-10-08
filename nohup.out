@@ -1,0 +1,1068 @@
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://172.31.4.76:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 470-159-617
+61.251.194.136 - - [07/Oct/2021 00:48:01] "GET / HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:48:01] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:48:01] "GET /static/default.js HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:48:01] "GET /static/favicon.ico HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:48:01] "GET /static/favicon.ico HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:48:01] "GET / HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:48:01] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:48:01] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:48:02] "GET /static/favicon.ico HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:48:02] "GET /static/favicon.ico HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:48:07] "GET / HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:48:07] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:48:07] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:48:07] "GET /static/favicon.ico HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:48:07] "GET /static/favicon.ico HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:48:09] "GET /timeline HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:48:09] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:48:09] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:48:09] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:48:09] "GET /get_posts?username_give= HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:48:09] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:48:11] "POST /update_like HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:48:12] "POST /update_like HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:48:12] "POST /update_like HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:48:13] "POST /update_like HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:48:14] "POST /update_like HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:48:15] "POST /update_like HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:48:16] "GET / HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:48:16] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:48:16] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:48:16] "GET /static/favicon.ico HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:48:16] "GET /static/favicon.ico HTTP/1.1" 304 -
+223.33.165.51 - - [07/Oct/2021 00:48:31] "GET / HTTP/1.1" 302 -
+223.33.165.51 - - [07/Oct/2021 00:48:31] "GET /login?msg=로그인+정보가+존재하지+않습니다. HTTP/1.1" 200 -
+223.33.165.51 - - [07/Oct/2021 00:48:31] "GET /static/default.css HTTP/1.1" 200 -
+223.33.165.51 - - [07/Oct/2021 00:48:41] "POST /sign_in HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2091, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2076, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/ubuntu/woodada/app.py", line 86, in sign_in
+    return jsonify({'result': 'success', 'token': token})
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 355, in jsonify
+    f"{dumps(data, indent=indent, separators=separators)}\n",
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 133, in dumps
+    rv = _json.dumps(obj, **kwargs)
+  File "/usr/lib/python3.6/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.6/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib/python3.6/json/encoder.py", line 430, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.6/json/encoder.py", line 404, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.6/json/encoder.py", line 437, in _iterencode
+    o = _default(o)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 57, in default
+    return super().default(o)
+  File "/usr/lib/python3.6/json/encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'bytes' is not JSON serializable
+223.33.165.51 - - [07/Oct/2021 00:48:44] "POST /sign_in HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2091, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2076, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/ubuntu/woodada/app.py", line 86, in sign_in
+    return jsonify({'result': 'success', 'token': token})
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 355, in jsonify
+    f"{dumps(data, indent=indent, separators=separators)}\n",
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 133, in dumps
+    rv = _json.dumps(obj, **kwargs)
+  File "/usr/lib/python3.6/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.6/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib/python3.6/json/encoder.py", line 430, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.6/json/encoder.py", line 404, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.6/json/encoder.py", line 437, in _iterencode
+    o = _default(o)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 57, in default
+    return super().default(o)
+  File "/usr/lib/python3.6/json/encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'bytes' is not JSON serializable
+223.33.165.51 - - [07/Oct/2021 00:48:54] "GET /apple-touch-icon.png HTTP/1.1" 404 -
+223.33.165.51 - - [07/Oct/2021 00:48:54] "GET /favicon.ico HTTP/1.1" 404 -
+223.33.165.51 - - [07/Oct/2021 00:48:54] "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 -
+223.33.165.51 - - [07/Oct/2021 00:48:54] "GET /login?msg=로그인+정보가+존재하지+않습니다. HTTP/1.1" 200 -
+223.33.165.51 - - [07/Oct/2021 00:48:55] "GET /static/favicon.ico HTTP/1.1" 200 -
+223.33.165.51 - - [07/Oct/2021 00:48:55] "GET /static/favicon.ico HTTP/1.1" 200 -
+223.33.165.51 - - [07/Oct/2021 00:48:55] "GET /static/ogimg.png HTTP/1.1" 200 -
+223.33.165.51 - - [07/Oct/2021 00:48:57] "GET /login?msg=로그인+정보가+존재하지+않습니다. HTTP/1.1" 200 -
+223.33.165.51 - - [07/Oct/2021 00:48:57] "GET /static/default.css HTTP/1.1" 200 -
+223.33.165.51 - - [07/Oct/2021 00:48:58] "GET /static/favicon.ico HTTP/1.1" 200 -
+223.33.165.51 - - [07/Oct/2021 00:49:06] "POST /sign_in HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2091, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2076, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/ubuntu/woodada/app.py", line 86, in sign_in
+    return jsonify({'result': 'success', 'token': token})
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 355, in jsonify
+    f"{dumps(data, indent=indent, separators=separators)}\n",
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 133, in dumps
+    rv = _json.dumps(obj, **kwargs)
+  File "/usr/lib/python3.6/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.6/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib/python3.6/json/encoder.py", line 430, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.6/json/encoder.py", line 404, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.6/json/encoder.py", line 437, in _iterencode
+    o = _default(o)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 57, in default
+    return super().default(o)
+  File "/usr/lib/python3.6/json/encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'bytes' is not JSON serializable
+223.33.165.51 - - [07/Oct/2021 00:49:09] "POST /sign_in HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2091, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2076, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/ubuntu/woodada/app.py", line 86, in sign_in
+    return jsonify({'result': 'success', 'token': token})
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 355, in jsonify
+    f"{dumps(data, indent=indent, separators=separators)}\n",
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 133, in dumps
+    rv = _json.dumps(obj, **kwargs)
+  File "/usr/lib/python3.6/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.6/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib/python3.6/json/encoder.py", line 430, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.6/json/encoder.py", line 404, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.6/json/encoder.py", line 437, in _iterencode
+    o = _default(o)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 57, in default
+    return super().default(o)
+  File "/usr/lib/python3.6/json/encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'bytes' is not JSON serializable
+61.251.194.136 - - [07/Oct/2021 00:49:43] "GET / HTTP/1.1" 302 -
+61.251.194.136 - - [07/Oct/2021 00:49:43] "GET /login?msg=로그인+정보가+존재하지+않습니다. HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:49:43] "GET /static/default.css HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:49:45] "GET /login?msg=로그인+정보가+존재하지+않습니다. HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:49:45] "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 -
+61.251.194.136 - - [07/Oct/2021 00:49:45] "GET /apple-touch-icon.png HTTP/1.1" 404 -
+61.251.194.136 - - [07/Oct/2021 00:49:45] "GET /favicon.ico HTTP/1.1" 404 -
+61.251.194.136 - - [07/Oct/2021 00:49:45] "GET /static/ogimg.png HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:49:45] "GET /static/favicon.ico HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:49:45] "GET /static/favicon.ico HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:49:48] "GET /login?msg=로그인+정보가+존재하지+않습니다. HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:49:48] "GET /static/default.css HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:49:49] "GET /static/favicon.ico HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:49:57] "POST /sign_in HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2091, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2076, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/ubuntu/woodada/app.py", line 86, in sign_in
+    return jsonify({'result': 'success', 'token': token})
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 355, in jsonify
+    f"{dumps(data, indent=indent, separators=separators)}\n",
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 133, in dumps
+    rv = _json.dumps(obj, **kwargs)
+  File "/usr/lib/python3.6/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.6/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib/python3.6/json/encoder.py", line 430, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.6/json/encoder.py", line 404, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.6/json/encoder.py", line 437, in _iterencode
+    o = _default(o)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 57, in default
+    return super().default(o)
+  File "/usr/lib/python3.6/json/encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'bytes' is not JSON serializable
+61.251.194.136 - - [07/Oct/2021 00:49:59] "POST /sign_in HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2091, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2076, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/ubuntu/woodada/app.py", line 86, in sign_in
+    return jsonify({'result': 'success', 'token': token})
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 355, in jsonify
+    f"{dumps(data, indent=indent, separators=separators)}\n",
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 133, in dumps
+    rv = _json.dumps(obj, **kwargs)
+  File "/usr/lib/python3.6/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.6/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib/python3.6/json/encoder.py", line 430, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.6/json/encoder.py", line 404, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.6/json/encoder.py", line 437, in _iterencode
+    o = _default(o)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 57, in default
+    return super().default(o)
+  File "/usr/lib/python3.6/json/encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'bytes' is not JSON serializable
+61.251.194.136 - - [07/Oct/2021 00:50:04] "POST /sign_in HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2091, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2076, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/ubuntu/woodada/app.py", line 86, in sign_in
+    return jsonify({'result': 'success', 'token': token})
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 355, in jsonify
+    f"{dumps(data, indent=indent, separators=separators)}\n",
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 133, in dumps
+    rv = _json.dumps(obj, **kwargs)
+  File "/usr/lib/python3.6/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.6/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib/python3.6/json/encoder.py", line 430, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.6/json/encoder.py", line 404, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.6/json/encoder.py", line 437, in _iterencode
+    o = _default(o)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 57, in default
+    return super().default(o)
+  File "/usr/lib/python3.6/json/encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'bytes' is not JSON serializable
+61.251.194.136 - - [07/Oct/2021 00:51:40] "GET / HTTP/1.1" 302 -
+61.251.194.136 - - [07/Oct/2021 00:51:40] "GET /login?msg=로그인+정보가+존재하지+않습니다. HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:51:40] "GET /static/default.css HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:51:41] "GET /static/favicon.ico HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:51:41] "GET /static/favicon.ico HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:51:42] "POST /sign_in HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2091, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2076, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/ubuntu/woodada/app.py", line 86, in sign_in
+    return jsonify({'result': 'success', 'token': token})
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 355, in jsonify
+    f"{dumps(data, indent=indent, separators=separators)}\n",
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 133, in dumps
+    rv = _json.dumps(obj, **kwargs)
+  File "/usr/lib/python3.6/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.6/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib/python3.6/json/encoder.py", line 430, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.6/json/encoder.py", line 404, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.6/json/encoder.py", line 437, in _iterencode
+    o = _default(o)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 57, in default
+    return super().default(o)
+  File "/usr/lib/python3.6/json/encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'bytes' is not JSON serializable
+61.251.194.136 - - [07/Oct/2021 00:51:43] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:51:47] "POST /sign_in HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2091, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2076, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/ubuntu/woodada/app.py", line 86, in sign_in
+    return jsonify({'result': 'success', 'token': token})
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 355, in jsonify
+    f"{dumps(data, indent=indent, separators=separators)}\n",
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 133, in dumps
+    rv = _json.dumps(obj, **kwargs)
+  File "/usr/lib/python3.6/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.6/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib/python3.6/json/encoder.py", line 430, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.6/json/encoder.py", line 404, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.6/json/encoder.py", line 437, in _iterencode
+    o = _default(o)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 57, in default
+    return super().default(o)
+  File "/usr/lib/python3.6/json/encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'bytes' is not JSON serializable
+61.251.194.136 - - [07/Oct/2021 00:52:29] "POST /sign_in HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2091, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2076, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/ubuntu/woodada/app.py", line 86, in sign_in
+    return jsonify({'result': 'success', 'token': token})
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 355, in jsonify
+    f"{dumps(data, indent=indent, separators=separators)}\n",
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 133, in dumps
+    rv = _json.dumps(obj, **kwargs)
+  File "/usr/lib/python3.6/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.6/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib/python3.6/json/encoder.py", line 430, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.6/json/encoder.py", line 404, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.6/json/encoder.py", line 437, in _iterencode
+    o = _default(o)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 57, in default
+    return super().default(o)
+  File "/usr/lib/python3.6/json/encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'bytes' is not JSON serializable
+61.251.194.136 - - [07/Oct/2021 00:52:30] "POST /sign_in HTTP/1.1" 500 -
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://172.31.4.76:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 470-159-617
+61.251.194.136 - - [07/Oct/2021 00:53:57] "GET /login?msg=로그인+정보가+존재하지+않습니다. HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:53:57] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:53:57] "GET /static/favicon.ico HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:53:57] "GET /static/favicon.ico HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:53:59] "POST /sign_in HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2091, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2076, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/ubuntu/woodada/app.py", line 86, in sign_in
+    return jsonify({'result': 'success', 'token': token})
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 355, in jsonify
+    f"{dumps(data, indent=indent, separators=separators)}\n",
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 133, in dumps
+    rv = _json.dumps(obj, **kwargs)
+  File "/usr/lib/python3.6/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.6/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib/python3.6/json/encoder.py", line 430, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.6/json/encoder.py", line 404, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.6/json/encoder.py", line 437, in _iterencode
+    o = _default(o)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 57, in default
+    return super().default(o)
+  File "/usr/lib/python3.6/json/encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'bytes' is not JSON serializable
+61.251.194.136 - - [07/Oct/2021 00:53:59] "POST /sign_in HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2091, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2076, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/ubuntu/woodada/app.py", line 86, in sign_in
+    return jsonify({'result': 'success', 'token': token})
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 355, in jsonify
+    f"{dumps(data, indent=indent, separators=separators)}\n",
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 133, in dumps
+    rv = _json.dumps(obj, **kwargs)
+  File "/usr/lib/python3.6/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.6/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib/python3.6/json/encoder.py", line 430, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.6/json/encoder.py", line 404, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.6/json/encoder.py", line 437, in _iterencode
+    o = _default(o)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 57, in default
+    return super().default(o)
+  File "/usr/lib/python3.6/json/encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'bytes' is not JSON serializable
+61.251.194.136 - - [07/Oct/2021 00:53:59] "POST /sign_in HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2091, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2076, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/ubuntu/woodada/app.py", line 86, in sign_in
+    return jsonify({'result': 'success', 'token': token})
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 355, in jsonify
+    f"{dumps(data, indent=indent, separators=separators)}\n",
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 133, in dumps
+    rv = _json.dumps(obj, **kwargs)
+  File "/usr/lib/python3.6/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.6/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib/python3.6/json/encoder.py", line 430, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.6/json/encoder.py", line 404, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.6/json/encoder.py", line 437, in _iterencode
+    o = _default(o)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/flask/json/__init__.py", line 57, in default
+    return super().default(o)
+  File "/usr/lib/python3.6/json/encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'bytes' is not JSON serializable
+61.251.194.136 - - [07/Oct/2021 00:54:00] "GET /static/default.css HTTP/1.1" 304 -
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://172.31.4.76:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 470-159-617
+61.251.194.136 - - [07/Oct/2021 00:55:54] "GET /timeline HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:55:54] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:55:54] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:55:54] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:55:54] "GET /static/favicon.ico HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:55:55] "GET /get_posts?username_give= HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:55:55] "GET /static/favicon.ico HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:55:55] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:55:55] "GET /timeline HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:55:55] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:55:55] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:55:55] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:55:55] "GET /static/favicon.ico HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:55:55] "GET /get_posts?username_give= HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:55:55] "GET /static/favicon.ico HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:55:55] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:56:12] "POST /sign_in HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:56:12] "GET / HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:56:12] "GET /static/default.js HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:56:12] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:56:15] "GET / HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:56:15] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:56:15] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:56:23] "GET /timeline HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:56:23] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:56:23] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:56:23] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:56:23] "GET /get_posts?username_give= HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:56:23] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:56:24] "GET /timeline HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:56:24] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:56:24] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:56:24] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:56:24] "GET /get_posts?username_give= HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:56:24] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:56:24] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:56:26] "GET /timeline HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:56:26] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:56:26] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:56:26] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:56:26] "GET /get_posts?username_give= HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:56:26] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:56:26] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:56:32] "GET /timeline HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:56:32] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:56:32] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:56:32] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:56:32] "GET /get_posts?username_give= HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 00:56:32] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 00:56:32] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:03:58] "GET /timeline HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:03:58] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:03:58] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:03:58] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:03:58] "GET /get_posts?username_give= HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:03:58] "GET /static/favicon.ico HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:03:58] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:03:58] "GET /static/favicon.ico HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:04:15] "GET /timeline HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:04:15] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:04:15] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:04:15] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:04:15] "GET /static/favicon.ico HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:04:15] "GET /get_posts?username_give= HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:04:15] "GET /static/favicon.ico HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:04:15] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:04:42] "GET /timeline HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:04:42] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:04:42] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:04:42] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:04:42] "GET /static/favicon.ico HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:04:42] "GET /get_posts?username_give= HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:04:42] "GET /static/favicon.ico HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:04:42] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://172.31.4.76:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 470-159-617
+61.251.194.136 - - [07/Oct/2021 01:07:45] "GET /timeline HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:07:45] "GET /static/default.css HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:07:45] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:07:45] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:07:45] "GET /static/favicon.ico HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:07:45] "GET /get_posts?username_give= HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:07:45] "GET /static/favicon.ico HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:07:45] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:07:47] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:07:56] "GET /timeline HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:07:57] "GET /static/default.css HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:07:57] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:07:57] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:07:57] "GET /get_posts?username_give= HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:07:57] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:07:57] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:08:01] "GET /user/test HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:08:02] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:08:02] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:08:02] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:08:02] "GET /get_posts?username_give=test HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:08:02] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:08:18] "GET /user/test HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:08:18] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:08:18] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:08:18] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:08:18] "GET /get_posts?username_give=test HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:08:18] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:08:20] "GET /timeline HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:08:20] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:08:20] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:08:20] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:08:20] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:08:20] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:08:20] "GET /get_posts?username_give= HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:08:20] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:08:20] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:08:21] "GET / HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:08:21] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:08:21] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:08:21] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:09:16] "GET /user/test HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:09:16] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:09:16] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:09:16] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:09:16] "GET /get_posts?username_give=test HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:09:16] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:09:18] "GET /login HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:09:18] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:09:45] "POST /sign_in HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:09:45] "GET / HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:09:45] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:09:45] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:09:45] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:09:49] "GET /timeline HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:09:49] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:09:49] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:09:49] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:09:49] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:09:49] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:09:49] "GET /get_posts?username_give= HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:09:50] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:09:50] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:09:53] "POST /update_like HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:09:53] "POST /update_like HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:09:54] "POST /update_like HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:09:55] "GET /user/test HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:09:55] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:09:55] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:09:55] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:09:55] "GET /get_posts?username_give=test HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:09:55] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:09:59] "GET /login HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:09:59] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:10:16] "POST /sign_up/check_dup HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:10:41] "POST /sign_up/save HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:10:42] "GET /login HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:10:42] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:10:50] "POST /sign_in HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:10:57] "POST /sign_in HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:10:57] "GET / HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:10:57] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:10:57] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:10:57] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:00] "GET /user/geonu HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:11:00] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:00] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:00] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:00] "GET /get_posts?username_give=geonu HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:11:31] "POST /update_profile HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:11:32] "GET /user/geonu HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:11:32] "GET /static/profile_pics/geonu.jpeg HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:11:32] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:32] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:32] "GET /get_posts?username_give=geonu HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:11:36] "GET /timeline HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:11:36] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:36] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:36] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:36] "GET /static/profile_pics/geonu.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:36] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:36] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:36] "GET /get_posts?username_give= HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:11:36] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:38] "POST /update_like HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:11:39] "POST /update_like HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:11:40] "POST /update_like HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:11:41] "GET /user/ian_han HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:11:41] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:41] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:41] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:41] "GET /get_posts?username_give=ian_han HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:11:41] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:44] "GET /timeline HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:11:45] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:45] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:45] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:45] "GET /static/profile_pics/geonu.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:45] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:45] "GET /get_posts?username_give= HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:11:45] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:45] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:45] "GET / HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:11:46] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:46] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:46] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:46] "GET /timeline HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:11:46] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:46] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:46] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:46] "GET /static/profile_pics/geonu.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:46] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:46] "GET /get_posts?username_give= HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:11:46] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:11:46] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:00] "POST /posting HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:12:01] "GET /timeline HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:12:01] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:01] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:01] "GET /static/profile_pics/geonu.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:01] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:01] "GET /get_posts?username_give= HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:12:01] "GET /static/profile_pics/geonu.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:01] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:01] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:02] "GET /user/geonu HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:12:02] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:02] "GET /static/profile_pics/geonu.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:02] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:02] "GET /get_posts?username_give=geonu HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:12:05] "GET / HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:12:05] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:06] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:06] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:07] "GET /timeline HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:12:07] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:07] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:07] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:07] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:07] "GET /static/profile_pics/geonu.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:07] "GET /get_posts?username_give= HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:12:07] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:07] "GET /static/profile_pics/geonu.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:07] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:21] "GET /user/ian_han HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:12:22] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:22] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:22] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:22] "GET /get_posts?username_give=ian_han HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:12:22] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:25] "GET /user/test HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:12:26] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:26] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:26] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:26] "GET /get_posts?username_give=test HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:12:26] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:27] "GET /user/geonu HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:12:27] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:27] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:27] "GET /static/profile_pics/geonu.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:27] "GET /get_posts?username_give=geonu HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:12:27] "GET /static/profile_pics/geonu.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:41] "GET /user/geonu HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:12:41] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:41] "GET /static/profile_pics/geonu.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:41] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:41] "GET /get_posts?username_give=geonu HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:12:41] "GET /static/profile_pics/geonu.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:43] "GET / HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:12:43] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:43] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:43] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:50] "GET /timeline HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:12:50] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:50] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:50] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:50] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:50] "GET /static/profile_pics/geonu.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:50] "GET /get_posts?username_give= HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:12:50] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:50] "GET /static/profile_pics/geonu.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:50] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:51] "GET /user/geonu HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:12:51] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:51] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:51] "GET /static/profile_pics/geonu.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:51] "GET /get_posts?username_give=geonu HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:12:51] "GET /static/profile_pics/geonu.jpeg HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:54] "GET /user/test HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:12:54] "GET /static/default.css HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:54] "GET /static/default.js HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:54] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+61.251.194.136 - - [07/Oct/2021 01:12:54] "GET /get_posts?username_give=test HTTP/1.1" 200 -
+61.251.194.136 - - [07/Oct/2021 01:12:54] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+162.142.125.196 - - [07/Oct/2021 01:21:10] code 400, message Bad request version ('À\x14À')
+162.142.125.196 - - [07/Oct/2021 01:21:10] " {  wUÉwÀ0ÚÒÝ½Ab¨Â½r $W$"ûÀðã8³  À/À+ÀÀÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+162.142.125.196 - - [07/Oct/2021 01:21:11] "GET / HTTP/1.1" 302 -
+162.142.125.196 - - [07/Oct/2021 01:21:12] "GET / HTTP/1.1" 302 -
+162.142.125.196 - - [07/Oct/2021 01:21:12] "GET /login HTTP/1.1" 200 -
+45.143.99.69 - - [07/Oct/2021 01:34:52] "GET / HTTP/1.1" 302 -
+104.140.188.10 - - [07/Oct/2021 01:54:34] "GET / HTTP/1.1" 302 -
+104.140.188.10 - - [07/Oct/2021 01:54:36] "GET /login?msg=로그인+정보가+존재하지+않습니다. HTTP/1.1" 200 -
+80.82.77.192 - - [07/Oct/2021 02:08:14] "GET / HTTP/1.1" 302 -
+80.82.77.192 - - [07/Oct/2021 02:08:15] "GET /login?msg=로그인+정보가+존재하지+않습니다. HTTP/1.1" 200 -
+64.227.99.233 - - [07/Oct/2021 02:11:06] code 400, message Bad request syntax ('\x00\x0e8ªÏ\x9eÀ\x1bc®Q\x00\x00\x00\x00\x00')
+64.227.99.233 - - [07/Oct/2021 02:11:06] " 8ªÏÀc®Q     " HTTPStatus.BAD_REQUEST -
+34.79.107.251 - - [07/Oct/2021 02:37:28] "GET / HTTP/1.1" 302 -
+45.146.164.110 - - [07/Oct/2021 02:41:16] "GET /?XDEBUG_SESSION_START=phpstorm HTTP/1.1" 302 -
+45.146.164.110 - - [07/Oct/2021 02:41:16] "POST /api/jsonws/invoke HTTP/1.1" 404 -
+45.146.164.110 - - [07/Oct/2021 02:41:17] "GET /wp-content/plugins/wp-file-manager/readme.txt HTTP/1.1" 404 -
+45.146.164.110 - - [07/Oct/2021 02:41:17] "POST /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 -
+45.146.164.110 - - [07/Oct/2021 02:41:19] "GET / HTTP/1.1" 302 -
+45.146.164.110 - - [07/Oct/2021 02:41:19] "POST /Autodiscover/Autodiscover.xml HTTP/1.1" 404 -
+45.146.164.110 - - [07/Oct/2021 02:41:19] "GET /_ignition/execute-solution HTTP/1.1" 404 -
+45.146.164.110 - - [07/Oct/2021 02:41:21] "GET /solr/admin/info/system?wt=json HTTP/1.1" 404 -
+45.146.164.110 - - [07/Oct/2021 02:41:22] "GET /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 -
+45.146.164.110 - - [07/Oct/2021 02:41:23] "GET /index.php?s=/Index/\think\app/invokefunction&function=call_user_func_array&vars[0]=md5&vars[1][]=HelloThinkPHP21 HTTP/1.1" 404 -
+45.146.164.110 - - [07/Oct/2021 02:41:23] "GET /?a=fetch&content=<php>die(@md5(HelloThinkCMF))</php> HTTP/1.1" 302 -
+45.146.164.110 - - [07/Oct/2021 02:41:24] "GET /console/ HTTP/1.1" 404 -
+45.146.164.110 - - [07/Oct/2021 02:41:25] "GET /login?msg=로그인+정보가+존재하지+않습니다. HTTP/1.1" 200 -
+45.146.164.110 - - [07/Oct/2021 02:41:26] "GET /login?msg=로그인+정보가+존재하지+않습니다. HTTP/1.1" 200 -
+45.146.164.110 - - [07/Oct/2021 02:41:27] "GET /login?msg=로그인+정보가+존재하지+않습니다. HTTP/1.1" 200 -
+137.184.109.135 - - [07/Oct/2021 02:49:43] "GET /.env HTTP/1.1" 404 -
+137.184.109.135 - - [07/Oct/2021 02:49:43] "POST / HTTP/1.1" 405 -
+185.217.1.122 - - [07/Oct/2021 04:01:18] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+185.217.1.122 - - [07/Oct/2021 04:01:18] "  /*à     Cookie: mstshash=Administr" HTTPStatus.BAD_REQUEST -
+209.141.56.212 - - [07/Oct/2021 04:29:49] "GET /config/getuser?index=0 HTTP/1.1" 404 -
+80.82.77.227 - - [07/Oct/2021 04:36:59] "GET / HTTP/1.1" 302 -
+80.82.77.227 - - [07/Oct/2021 04:37:00] "GET /login?msg=로그인+정보가+존재하지+않습니다. HTTP/1.1" 200 -
+178.174.137.167 - - [07/Oct/2021 04:54:43] "GET / HTTP/1.0" 302 -
+209.17.97.98 - - [07/Oct/2021 05:21:52] "GET / HTTP/1.1" 302 -
+209.17.97.98 - - [07/Oct/2021 05:21:52] "GET /login?msg=로그인+정보가+존재하지+않습니다. HTTP/1.1" 200 -
+162.221.192.26 - - [07/Oct/2021 05:33:35] "GET /solr/ HTTP/1.1" 404 -
+64.227.13.201 - - [07/Oct/2021 05:46:57] "GET /.env HTTP/1.1" 404 -
+64.227.13.201 - - [07/Oct/2021 05:46:57] "POST / HTTP/1.1" 405 -
+209.17.97.50 - - [07/Oct/2021 05:53:41] "GET / HTTP/1.0" 302 -
+209.141.56.212 - - [07/Oct/2021 08:00:46] "GET /config/getuser?index=0 HTTP/1.1" 404 -
+185.180.143.137 - - [07/Oct/2021 08:14:07] "GET / HTTP/1.1" 302 -
+185.180.143.137 - - [07/Oct/2021 08:14:08] "GET /login?msg=로그인+정보가+존재하지+않습니다. HTTP/1.1" 200 -
+137.184.109.135 - - [07/Oct/2021 08:21:48] "GET /.env HTTP/1.1" 404 -
+137.184.109.135 - - [07/Oct/2021 08:21:49] "POST / HTTP/1.1" 405 -
+61.251.194.136 - - [07/Oct/2021 08:40:09] "GET /get_posts?username_give=test HTTP/1.1" 302 -
+61.251.194.136 - - [07/Oct/2021 08:40:09] "GET /timeline HTTP/1.1" 302 -
+61.251.194.136 - - [07/Oct/2021 08:40:09] "GET /login?msg=로그인+정보가+존재하지+않습니다. HTTP/1.1" 200 -
+209.17.96.2 - - [07/Oct/2021 08:50:31] "GET / HTTP/1.0" 302 -
+223.33.164.132 - - [07/Oct/2021 09:37:36] "GET / HTTP/1.1" 302 -
+223.33.164.132 - - [07/Oct/2021 09:37:36] "GET /login?msg=로그인+정보가+존재하지+않습니다. HTTP/1.1" 200 -
+223.33.164.132 - - [07/Oct/2021 09:37:37] "GET /static/default.css HTTP/1.1" 200 -
+223.33.164.132 - - [07/Oct/2021 09:37:41] "GET /favicon.ico HTTP/1.1" 404 -
+223.33.164.132 - - [07/Oct/2021 09:37:41] "GET /apple-touch-icon.png HTTP/1.1" 404 -
+223.33.164.132 - - [07/Oct/2021 09:37:41] "GET /login?msg=로그인+정보가+존재하지+않습니다. HTTP/1.1" 200 -
+223.33.164.132 - - [07/Oct/2021 09:37:41] "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 -
+223.33.164.132 - - [07/Oct/2021 09:37:41] "GET /static/favicon.ico HTTP/1.1" 200 -
+223.33.164.132 - - [07/Oct/2021 09:37:41] "GET /static/favicon.ico HTTP/1.1" 200 -
+223.33.164.132 - - [07/Oct/2021 09:37:41] "GET /static/ogimg.png HTTP/1.1" 200 -
+223.33.164.132 - - [07/Oct/2021 09:37:45] "GET /login?msg=로그인+정보가+존재하지+않습니다. HTTP/1.1" 200 -
+223.33.164.132 - - [07/Oct/2021 09:37:45] "GET /static/default.css HTTP/1.1" 200 -
+223.33.164.132 - - [07/Oct/2021 09:37:45] "GET /static/favicon.ico HTTP/1.1" 200 -
+223.33.164.132 - - [07/Oct/2021 09:38:09] "POST /sign_in HTTP/1.1" 200 -
+223.33.164.132 - - [07/Oct/2021 09:38:09] "GET / HTTP/1.1" 200 -
+223.33.164.132 - - [07/Oct/2021 09:38:10] "GET /static/default.css HTTP/1.1" 304 -
+223.33.164.132 - - [07/Oct/2021 09:38:10] "GET /static/default.js HTTP/1.1" 200 -
+223.33.164.35 - - [07/Oct/2021 09:38:16] "GET /timeline HTTP/1.1" 200 -
+223.33.164.35 - - [07/Oct/2021 09:38:16] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 200 -
+223.33.164.35 - - [07/Oct/2021 09:38:16] "GET /static/default.css HTTP/1.1" 304 -
+223.33.164.35 - - [07/Oct/2021 09:38:16] "GET /static/default.js HTTP/1.1" 304 -
+223.33.164.35 - - [07/Oct/2021 09:38:16] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 200 -
+223.33.164.35 - - [07/Oct/2021 09:38:16] "GET /get_posts?username_give= HTTP/1.1" 200 -
+223.33.164.35 - - [07/Oct/2021 09:38:17] "GET /static/profile_pics/geonu.jpeg HTTP/1.1" 200 -
+223.33.164.240 - - [07/Oct/2021 09:38:20] "POST /update_like HTTP/1.1" 200 -
+223.33.165.192 - - [07/Oct/2021 09:38:23] "POST /update_like HTTP/1.1" 200 -
+223.33.164.143 - - [07/Oct/2021 09:38:55] "GET / HTTP/1.1" 200 -
+223.33.164.143 - - [07/Oct/2021 09:38:55] "GET /static/default.js HTTP/1.1" 304 -
+223.33.164.143 - - [07/Oct/2021 09:38:55] "GET /static/default.css HTTP/1.1" 304 -
+223.33.164.143 - - [07/Oct/2021 09:38:56] "GET /timeline HTTP/1.1" 200 -
+223.33.164.143 - - [07/Oct/2021 09:38:56] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+223.33.164.143 - - [07/Oct/2021 09:38:56] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+223.33.164.143 - - [07/Oct/2021 09:38:56] "GET /static/default.css HTTP/1.1" 304 -
+223.33.164.143 - - [07/Oct/2021 09:38:56] "GET /static/default.js HTTP/1.1" 304 -
+223.33.164.143 - - [07/Oct/2021 09:38:56] "GET /get_posts?username_give= HTTP/1.1" 200 -
+223.33.164.143 - - [07/Oct/2021 09:38:56] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+223.33.164.143 - - [07/Oct/2021 09:38:56] "GET /static/profile_pics/geonu.jpeg HTTP/1.1" 304 -
+223.33.164.143 - - [07/Oct/2021 09:38:56] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+223.33.164.143 - - [07/Oct/2021 09:38:57] "GET / HTTP/1.1" 200 -
+223.33.164.143 - - [07/Oct/2021 09:38:57] "GET /static/default.css HTTP/1.1" 304 -
+223.33.164.143 - - [07/Oct/2021 09:38:57] "GET /static/default.js HTTP/1.1" 304 -
+223.33.164.143 - - [07/Oct/2021 09:39:07] "GET /detail/사과?status_give=old HTTP/1.1" 200 -
+223.33.164.143 - - [07/Oct/2021 09:39:08] "GET /static/default.js HTTP/1.1" 304 -
+223.33.164.143 - - [07/Oct/2021 09:39:08] "GET /static/default.css HTTP/1.1" 304 -
+223.33.164.143 - - [07/Oct/2021 09:39:08] "GET /api/get_examples?word_give=사과 HTTP/1.1" 200 -
+223.33.164.143 - - [07/Oct/2021 09:39:22] "GET /detail/프로그램?status_give=old HTTP/1.1" 200 -
+223.33.164.143 - - [07/Oct/2021 09:39:22] "GET /static/default.js HTTP/1.1" 304 -
+223.33.164.143 - - [07/Oct/2021 09:39:22] "GET /static/default.css HTTP/1.1" 304 -
+223.33.164.143 - - [07/Oct/2021 09:39:23] "GET /api/get_examples?word_give=프로그램 HTTP/1.1" 200 -
+223.33.164.143 - - [07/Oct/2021 09:39:36] "GET /timeline HTTP/1.1" 200 -
+223.33.164.143 - - [07/Oct/2021 09:39:36] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+223.33.164.143 - - [07/Oct/2021 09:39:36] "GET /static/default.js HTTP/1.1" 304 -
+223.33.164.143 - - [07/Oct/2021 09:39:36] "GET /static/default.css HTTP/1.1" 304 -
+223.33.164.143 - - [07/Oct/2021 09:39:36] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+223.33.164.143 - - [07/Oct/2021 09:39:36] "GET /get_posts?username_give= HTTP/1.1" 200 -
+223.33.164.143 - - [07/Oct/2021 09:39:36] "GET /static/profile_pics/geonu.jpeg HTTP/1.1" 304 -
+223.33.164.143 - - [07/Oct/2021 09:39:36] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+223.33.164.143 - - [07/Oct/2021 09:39:36] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+18.183.90.237 - - [07/Oct/2021 09:48:55] "GET /.env HTTP/1.1" 404 -
+18.183.90.237 - - [07/Oct/2021 09:48:56] "POST / HTTP/1.1" 405 -
+209.17.96.2 - - [07/Oct/2021 10:00:07] code 400, message Bad request syntax ("\x16\x03\x01\x00â\x01\x00\x00Þ\x03\x03\x1c\x91.\x97ª$wìVe\x93îü#îX~ý\x89Ä\x0cqE'ì;ñ\x13\x03Ä\xa0Â\x00\x00hÌ\x14Ì\x13À/À+À0À,À\x11À\x07À'À#À\x13À\tÀ(À$À\x14À")
+209.17.96.2 - - [07/Oct/2021 10:00:07] " â  Þ.ª$wìVeîü#îX~ýÄqE'ì;ñÄ Â  hÌÌÀ/À+À0À,ÀÀÀ'À#ÀÀ	À(À$ÀÀ" HTTPStatus.BAD_REQUEST -
+185.56.80.11 - - [07/Oct/2021 10:05:31] "GET / HTTP/1.1" 302 -
+222.109.53.127 - - [07/Oct/2021 10:45:13] "GET /blocks/latest HTTP/1.1" 404 -
+209.17.96.42 - - [07/Oct/2021 11:06:22] "GET / HTTP/1.1" 302 -
+209.17.96.42 - - [07/Oct/2021 11:06:23] "GET /login?msg=로그인+정보가+존재하지+않습니다. HTTP/1.1" 200 -
+167.99.95.237 - - [07/Oct/2021 11:29:04] "POST / HTTP/1.1" 405 -
+167.99.95.237 - - [07/Oct/2021 11:29:05] "GET /.env HTTP/1.1" 404 -
+192.241.199.181 - - [07/Oct/2021 11:41:20] "GET /ReportServer HTTP/1.1" 404 -
+162.33.178.80 - - [07/Oct/2021 11:41:35] "GET /.env HTTP/1.1" 404 -
+162.33.178.80 - - [07/Oct/2021 11:41:35] "POST / HTTP/1.1" 405 -
+18.223.118.149 - - [07/Oct/2021 11:56:29] "GET /.env HTTP/1.1" 404 -
+18.223.118.149 - - [07/Oct/2021 11:56:30] "POST / HTTP/1.1" 405 -
+167.94.138.41 - - [07/Oct/2021 12:03:08] "GET / HTTP/1.1" 302 -
+167.94.138.41 - - [07/Oct/2021 12:03:09] "GET / HTTP/1.1" 302 -
+167.94.138.41 - - [07/Oct/2021 12:03:09] "GET /login HTTP/1.1" 200 -
+121.53.181.250 - - [07/Oct/2021 12:32:03] "GET / HTTP/1.1" 302 -
+210.220.95.6 - - [07/Oct/2021 12:32:03] "GET / HTTP/1.1" 302 -
+121.53.180.2 - - [07/Oct/2021 12:32:03] "GET /login?msg=로그인+정보가+존재하지+않습니다. HTTP/1.1" 200 -
+220.64.104.252 - - [07/Oct/2021 12:32:03] "GET /login?msg=로그인+정보가+존재하지+않습니다. HTTP/1.1" 200 -
+137.184.109.194 - - [07/Oct/2021 12:35:36] "GET /.env HTTP/1.1" 404 -
+137.184.109.194 - - [07/Oct/2021 12:35:37] "POST / HTTP/1.1" 405 -
+115.89.22.13 - - [07/Oct/2021 12:41:57] "GET / HTTP/1.1" 302 -
+115.89.22.13 - - [07/Oct/2021 12:41:57] "GET /login?msg=로그인+정보가+존재하지+않습니다. HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:41:57] "GET /static/default.css HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:41:57] "GET /static/favicon.ico HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:41:57] "GET /static/favicon.ico HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:41:59] "POST /sign_in HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:41:59] "GET / HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:42:00] "GET /static/default.js HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:42:00] "GET /static/default.css HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:03] "GET /timeline HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:42:03] "GET /static/default.css HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:03] "GET /static/default.js HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:03] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:42:03] "GET /get_posts?username_give= HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:42:03] "GET /static/profile_pics/geonu.jpeg HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:42:03] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:42:06] "GET / HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:42:06] "GET /static/default.css HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:06] "GET /static/default.js HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:06] "GET /static/favicon.ico HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:06] "GET /static/favicon.ico HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:07] "GET /timeline HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:42:07] "GET /static/default.css HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:07] "GET /static/default.js HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:07] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:07] "GET /get_posts?username_give= HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:42:07] "GET /static/profile_pics/geonu.jpeg HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:07] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:09] "GET / HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:42:10] "GET /static/default.css HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:10] "GET /static/default.js HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:10] "GET /static/favicon.ico HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:10] "GET /static/favicon.ico HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:11] "GET /timeline HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:42:11] "GET /static/default.css HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:11] "GET /static/default.js HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:11] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:11] "GET /get_posts?username_give= HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:42:11] "GET /static/profile_pics/geonu.jpeg HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:11] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:13] "GET /user/test HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:42:13] "GET /static/default.css HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:13] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:13] "GET /static/default.js HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:13] "GET /get_posts?username_give=test HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:42:17] "GET / HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:42:17] "GET /static/default.css HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:17] "GET /static/default.js HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:17] "GET /static/favicon.ico HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:17] "GET /static/favicon.ico HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:18] "GET /timeline HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:42:18] "GET /static/default.css HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:18] "GET /static/default.js HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:18] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:18] "GET /get_posts?username_give= HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:42:18] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:18] "GET /static/profile_pics/geonu.jpeg HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:22] "GET /login HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:42:22] "GET /static/default.css HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:28] "POST /sign_in HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:42:28] "GET / HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:42:28] "GET /static/default.css HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:28] "GET /static/default.js HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:31] "GET /timeline HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:42:31] "GET /static/default.css HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:31] "GET /static/default.js HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:31] "GET /static/profile_pics/geonu.jpeg HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:31] "GET /static/profile_pics/profile_placeholder.png HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:31] "GET /get_posts?username_give= HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:42:31] "GET /static/profile_pics/ian_han.jpeg HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:36] "GET / HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:42:36] "GET /static/default.css HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:36] "GET /static/default.js HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:36] "GET /static/favicon.ico HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:36] "GET /static/favicon.ico HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:43] "GET /detail/디자이너?status_give=new HTTP/1.1" 200 -
+115.89.22.13 - - [07/Oct/2021 12:42:43] "GET /static/default.css HTTP/1.1" 304 -
+115.89.22.13 - - [07/Oct/2021 12:42:43] "GET /static/default.js HTTP/1.1" 304 -

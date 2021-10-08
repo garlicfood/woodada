@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>단어장 | 노들사전</title>
+    <link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../static/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="노란들판 - 함께 일해요!"/>
+    <meta property="og:description" content="누구도 배제되지 않는 일터를 만들어요."/>
+    <meta property="og:image" content="{{ url_for('static', filename='ogimg.png') }}"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='{{ url_for("static", filename="default.css") }}' rel="stylesheet">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+    <!--폰트-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+        .search-box {
+            width: 70%;
+            margin: 50px auto;
+            max-width: 700px;
+        }
+
+        .table {
+            width: 80%;
+            max-width: 800px;
+            margin: auto;
+            table-layout: fixed;
+        }
+
+        .table th {
+            border-top-style: none;
+        }
+
+        td {
+            background-color: white;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        td > a, a:visited, a:hover, a:active {
+            color: black;
+        }
+
+        tr.highlight > td {
+            background-color: #e8344e;
+            color: white;
+        }
+
+        tr.highlight a {
+            color: white;
+        }
+
+        thead:first-child tr:first-child th:first-child {
+            border-radius: 10px 0 0 0;
+        }
+
+        thead:first-child tr:first-child th:last-child {
+            border-radius: 0 10px 0 0;
+        }
+
+        tbody:last-child tr:last-child td:first-child {
+            border-radius: 0 0 0 10px;
+        }
+
+        tbody:last-child tr:last-child td:last-child {
+            border-radius: 0 0 10px 0;
+        }
+    </style>
+    <script>
+        {% if msg %}
+            alert("{{ msg }}")
+        {% endif %}
+        let words = {{ words|tojson }};
+        let word_list = [];
+        for (let i = 0; i < words.length; i++) {
+            word_list.push(words[i]["word"])
+        }
+
+        function find_word() {
+            let word = $("#input-word").val().toLowerCase();
+            if (word == "") {
+                alert("일단 단어를 적어주세요! :)")
+                return
+            }
+            if (word_list.includes(word)) {
+                $(`#word-${word}`).addClass('highlight').siblings().removeClass('highlight');
+                $(`#word-${word}`).get(0).scrollIntoView();
+            } else {
+                window.location.href = `/detail/${word}?status_give=new`
+            }
+        }
+
+    </script>
+</head>
+<body>
+<div class="wrap">
+    <nav class="local-nav">
+        <div class="local-nav-links">
+            <a href="#" onclick="window.location.reload()" class="product-name">노들사전</a>
+            <a href='/timeline'>타임라인</a>
+            <a href="/user/{{ user_info.username }}">정보수정</a>
+            <a href="#" onclick="sign_out()">로그아웃</a>
+        </div>
+    </nav>
+    <div class="search-box d-flex justify-content-center">
+        <input id="input-word" class="form-control" style="margin-right: 0.5rem"
+               onkeypress="if(event.keyCode===13){find_word()}">
+        <button class="btn btn-light" onclick="find_word()"><i class="fa fa-search"></i></button>
+    </div>
+    <table class="table">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col" style="width:30%">단어</th>
+            <th scope="col">의미</th>
+
+        </tr>
+        </thead>
+        <tbody id="tbody-box">
+        {% for word in words %}
+            <tr id="word-{{ word.word }}">
+                <td><a href="/detail/{{ word.word }}?status_give=old">{{ word.word }}</a></td>
+                <td>{{ word.definition|safe }}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<script src="{{ url_for('static', filename='default.js') }}"></script>
+</body>
+</html>

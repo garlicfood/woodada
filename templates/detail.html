@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{{ word }} | 노들사전</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <meta property="og:title" content="노란들판 - 함께 일해요!"/>
+    <meta property="og:description" content="누구도 배제되지 않는 일터를 만들어요."/>
+    <meta property="og:image" content="{{ url_for('static', filename='ogimg.png') }}"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='{{ url_for("static", filename="default.css") }}' rel="stylesheet">
+
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap" rel="stylesheet">
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+    <style>
+        li {
+            margin-bottom: 0.2rem;
+        }
+
+        p.example {
+            color: gray;
+            font-size: 1rem;
+            margin-left: 2rem;
+        }
+
+        .btn-norandp {
+            color: #fff;
+            background-color: #e8344e;
+            border-color: #e8344e;
+        }
+
+        .btn-outline-norandp {
+            color: #e8344e;
+            background-color: transparent;
+            background-image: none;
+            border-color: #e8344e;
+        }
+    </style>
+    <script>
+        let word = "{{ word }}"
+        let author = "{{ user_info['profile_name'] }}"
+        $(document).ready(function () {
+            {% if status=="old" %}
+                get_examples()
+            {% endif %}
+        })
+
+        function save_word() {
+            $.ajax({
+                type: "POST",
+                url: `/api/save_word`,
+                data: {
+                    word_give: "{{ result[0].word.text }}",
+                    definition_give: "{{ result[0].definition.text }}"
+                },
+                success: function (response) {
+                    alert(response["msg"])
+                    window.location.href = "/detail/{{ word }}?status_give=old"
+                }
+            });
+        }
+
+        function delete_word() {
+            let result = confirm("삭제 시 저장된 예문도 모두 삭제됩니다.\n정말 삭제하겠습니까?")
+            if (result) {
+                $.ajax({
+                    type: "POST",
+                    url: `/api/delete_word`,
+                    data: {
+                        word_give: '{{ result[0].word.text }}',
+                    },
+                    success: function (response) {
+                        alert(response["msg"])
+                        window.location.href = "/"
+                    }
+                });
+
+            } else {
+                return;
+            }
+        }
+
+        function get_examples() {
+            $("#example-list").empty()
+            $.ajax({
+                type: "GET",
+                url: `/api/get_examples?word_give={{result[0].word.text}}`,
+                data: {},
+                success: function (response) {
+                    let examples = response["all_sentence"];
+                    for (let i = 0; i < examples.length; i++) {
+                        let example = examples[i]["sentence"];
+                        let author = examples[i]["author"];
+                        console.log(example)
+                        let html_temp = `<li id="ex-${i}"><b>${example}</b>&nbsp;&nbsp;&nbsp;by ${author}&nbsp;&nbsp;&nbsp;<a class="btn btn-outline-danger btn-sm"
+                            href="javascript:delete_ex(${i})">지우기</a></li>`
+                        $("#example-list").append(html_temp)
+                    }
+                }
+            });
+        }
+
+        function add_ex() {
+            let new_ex = $('#new-example').val();
+            if (!new_ex.toLowerCase().includes(word.toLowerCase())) {
+                alert(`'${word}'를 포함해주세요!`);
+                return;
+            }
+            console.log(new_ex)
+            $.ajax({
+                type: "POST",
+                url: `/api/save_ex`,
+                data: {
+                    word_give: word,
+                    example_give: new_ex,
+                    author_give: author
+                },
+                success: function (response) {
+                    get_examples();
+                    $('#new-example').val("");
+                }
+            });
+        }
+
+        function delete_ex(i) {
+            let result = confirm("예문 삭제 시 복구할 수 없습니다.\n정말 삭제하겠습니까?")
+            if (result) {
+                console.log("deleting", i)
+                $.ajax({
+                    type: "POST",
+                    url: `/api/delete_ex`,
+                    data: {
+                        word_give: word,
+                        number_give: i
+                    },
+                    success: function (response) {
+                        get_examples()
+                    }
+                });
+            } else {
+                return;
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="wrap">
+    <nav class="local-nav">
+        <div class="local-nav-links">
+            <a href="/" onclick="window.location.reload()" class="product-name">노들사전</a>
+            <a href='/timeline'>타임라인</a>
+            <a href="/user/{{ user_info.username }}">정보수정</a>
+            <a href="#" onclick="sign_out()">로그아웃</a>
+        </div>
+    </nav>
+    <div class="word-box">
+        <div class="d-flex justify-content-between align-items-end">
+            <div>
+                <h1 id="word" style="display: inline;">{{ result[0].word.text }}</h1>
+            </div>
+            {% if status=="new" %}
+                <button id="btn-save" class="btn btn-outline-norandp btn-lg" onclick="save_word()"><i
+                        class="fa fa-floppy-o"
+                        aria-hidden="true"></i></button>
+            {% else %}
+                <button id="btn-delete" class="btn btn-norandp btn-lg" onclick="confirm_delete()"><i
+                        class="fa fa-trash-o"
+                        aria-hidden="true"></i></button>
+            {% endif %}
+        </div>
+        <hr>
+        <div id="definitions">
+            {% set definitions = result %}
+            {% for definition in definitions %}
+                <div style="padding:10px">
+                    <i>{{ definition.pos.text }}</i>
+                    <br>{{ definition.sense.definition.text }}<br>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="word-box">
+        {% if exams %}
+            <h2>예문</h2></br>
+            {% for example in exams %}
+                <p class="example">{{ example.example.text }}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+    {% if status=="old" %}
+        <div id="examples" class="word-box">
+            <h3 style="text-align: center;margin-bottom:1rem">노란들판은 이 단어를 이렇게도 사용해요!</h3>
+            <ul id="example-list">
+                <li id="ex-0">This sentence contains the word 'word'.&nbsp;&nbsp;&nbsp;<a
+                        href="javascript:delete_ex(0)">delete</a></li>
+                <li id="ex-1">I don't like using the MS Word program.&nbsp;&nbsp;&nbsp;<a
+                        href="javascript:delete_ex(1)">delete</a></li>
+            </ul>
+            <div class="d-flex justify-content-between" style="margin-left:20px;">
+                <input id="new-example" class="form-control form-control-sm" style="margin-right: 0.5rem"
+                       onkeypress="if(event.keyCode===13){add_ex()}">
+                <button class="btn btn-outline-secondary btn-sm" onclick="add_ex()">추가</button>
+            </div>
+        </div>
+    {% endif %}
+</div>
+<script src="{{ url_for('static', filename='default.js') }}"></script>
+</body>
+</html>
