@@ -23,6 +23,11 @@
     <!-- Font Awesome CSS -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Stylish&display=swap" rel="stylesheet">
     <link href="{{ url_for('static', filename='default.css') }}" rel="stylesheet">
@@ -43,7 +48,7 @@
     <div class="local-nav-links">
         <a href="/" onclick="window.location.reload()" class="product-name">노들사전</a>
         <a href='#'>타임라인</a>
-        <a href="/user/{{ user_info.username }}">정보수정</a>
+        <a href="/user/{{ user_info.username }}">내프로필</a>
         <a href="#" onclick="sign_out()">로그아웃</a>
     </div>
 </nav>

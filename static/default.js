@@ -1,5 +1,5 @@
 function toggle_like(post_id, type) {
-    console.log(post_id, type)
+    // console.log(post_id, type)
     let $a_like = $(`#${post_id} a[aria-label='${type}']`)
     let $i_like = $a_like.find("i")
     let selects = {"heart": "fa-heart", "star": "fa-star", "like": "fa-thumbs-up"}
@@ -14,7 +14,7 @@ function toggle_like(post_id, type) {
                 action_give: "unlike"
             },
             success: function (response) {
-                console.log("unlike")
+                // console.log("unlike")
                 $i_like.addClass(dislikes[type]).removeClass(selects[type])
                 $a_like.find("span.like-num").text(num2str(response["count"]))
             }
@@ -29,7 +29,7 @@ function toggle_like(post_id, type) {
                 action_give: "like"
             },
             success: function (response) {
-                console.log("like")
+                // console.log("like")
                 $i_like.addClass(selects[type]).removeClass(dislikes[type])
                 $a_like.find("span.like-num").text(num2str(response["count"]))
             }
@@ -106,6 +106,7 @@ function get_posts(username) {
         data: {},
         success: function (response) {
             if (response["result"] === "success") {
+                let writer = response["logged_one"]
                 let posts = response["posts"]
                 for (let i = 0; i < posts.length; i++) {
                     let post = posts[i]
@@ -117,7 +118,55 @@ function get_posts(username) {
                     let count_star = post['count_star']
                     let class_like = post['like_by_me'] ? "fa-thumbs-up" : "fa-thumbs-o-up"
                     let count_like = post['count_like']
-                    let html_temp = `<div class="box" id="${post["_id"]}">
+                    let wrote_time = time_post.toISOString()
+                    // console.log(post['comment'].replace(/\n/g, '<br/>'))
+                    if (writer === post['username']) {
+                        // // console.log("링크유저:" + username)
+                        // // console.log("포스팅유저:" + post['username'])
+                        // console.log("로그인유저:" + writer)
+                        // console.log("작성시간:" + wrote_time)
+                        let html_temp = `<div class="box" id="${post["_id"]}">
+                                        <article class="media">
+                                            <div class="media-left">
+                                                <a class="image is-64x64" href="/user/${post['username']}">
+                                                    <img class="is-rounded" src="/static/${post['profile_pic_real']}"
+                                                         alt="Image">
+                                                </a>
+                                            </div>
+                                            <div class="media-content">
+                                                <div class="content">
+                                                    <p>
+                                                        <strong>${post['profile_name']}</strong> <small>@${post['username']}</small> <small>${time_before}</small>
+                                                        <br>
+                                                        <span id="co-${i}">${post['comment'].replace(/\n/g, '<br/>')}</span>
+                                                    </p>
+                                                </div>
+                                                <nav class="level is-mobile">
+                                                    <div class="level-left">
+                                                        <a class="level-item is-norandp" aria-label="heart" onclick="toggle_like('${post['_id']}', 'heart')">
+                                                            <span class="icon is-small"><i class="fa ${class_heart}"
+                                                                                           aria-hidden="true"></i></span>&nbsp;<span class="like-num">${num2str(count_heart)}</span>
+                                                        </a>
+                                                        <a class="level-item is-norandp" aria-label="star" onclick="toggle_like('${post['_id']}', 'star')">
+                                                            <span class="icon is-small"><i class="fa ${class_star}"
+                                                                                           aria-hidden="true"></i></span>&nbsp;<span class="like-num">${num2str(count_star)}</span>
+                                                        </a>
+                                                        <a class="level-item is-norandp" aria-label="like" onclick="toggle_like('${post['_id']}', 'like')">
+                                                            <span class="icon is-small"><i class="fa ${class_like}"
+                                                                                           aria-hidden="true"></i></span>&nbsp;<span class="like-num">${num2str(count_like)}</span>
+                                                        </a>                                                      
+                                                    </div>
+                                                    <button style="margin-left: auto;" class="btn btn-outline-danger btn-sm" onclick="delete_post(document.getElementById('co-${i}').innerHTML, '${wrote_time}')">지우기</button>
+                                                </nav>
+                                            </div>
+                                        </article>
+                                    </div>`
+                        $("#post-box").append(html_temp)
+                    } else {
+                        // console.log("링크유저:" + username)
+                        // console.log("포스팅유저:" + post['username'])
+                        // console.log("로그인유저:" + writer)
+                        let html_temp = `<div class="box" id="${post["_id"]}">
                                         <article class="media">
                                             <div class="media-left">
                                                 <a class="image is-64x64" href="/user/${post['username']}">
@@ -135,25 +184,25 @@ function get_posts(username) {
                                                 </div>
                                                 <nav class="level is-mobile">
                                                     <div class="level-left">
-                                                        <a class="level-item is-sparta" aria-label="heart" onclick="toggle_like('${post['_id']}', 'heart')">
+                                                        <a class="level-item is-norandp" aria-label="heart" onclick="toggle_like('${post['_id']}', 'heart')">
                                                             <span class="icon is-small"><i class="fa ${class_heart}"
                                                                                            aria-hidden="true"></i></span>&nbsp;<span class="like-num">${num2str(count_heart)}</span>
                                                         </a>
-                                                        <a class="level-item is-sparta" aria-label="star" onclick="toggle_like('${post['_id']}', 'star')">
+                                                        <a class="level-item is-norandp" aria-label="star" onclick="toggle_like('${post['_id']}', 'star')">
                                                             <span class="icon is-small"><i class="fa ${class_star}"
                                                                                            aria-hidden="true"></i></span>&nbsp;<span class="like-num">${num2str(count_star)}</span>
                                                         </a>
-                                                        <a class="level-item is-sparta" aria-label="like" onclick="toggle_like('${post['_id']}', 'like')">
+                                                        <a class="level-item is-norandp" aria-label="like" onclick="toggle_like('${post['_id']}', 'like')">
                                                             <span class="icon is-small"><i class="fa ${class_like}"
                                                                                            aria-hidden="true"></i></span>&nbsp;<span class="like-num">${num2str(count_like)}</span>
                                                         </a>
                                                     </div>
-
                                                 </nav>
                                             </div>
                                         </article>
                                     </div>`
-                    $("#post-box").append(html_temp)
+                        $("#post-box").append(html_temp)
+                    }
                 }
             }
         }
@@ -174,7 +223,7 @@ function update_profile() {
     form_data.append("file_give", file)
     form_data.append("name_give", name)
     form_data.append("about_give", about)
-    console.log(name, file, about, form_data)
+    // console.log(name, file, about, form_data)
 
     $.ajax({
         type: "POST",
@@ -190,4 +239,50 @@ function update_profile() {
             }
         }
     });
+}
+
+function delete_post(comment, wrote_time) {
+    // console.log(comment)
+    // console.log(wrote_time)
+    let result = confirm("삭제 시 복구할 수 없습니다.\n정말 삭제하겠습니까?")
+    if (result) {
+        $.ajax({
+            type: 'POST',
+            url: '/api/delete_post',
+            data: {
+                post_give: comment.replace(/<br>/ig, '\n').replace(/&lt;/ig, '<').replace(/&gt;/ig, '>').replace(/&amp;/ig, '&'),
+                time_give: wrote_time
+            },
+            success: function (response) {
+                alert(response['msg']);
+                window.location.reload()
+            }
+        })
+    }
+}
+
+function Loading() {
+    let maskHeight = $(document).height();
+    let maskWidth = window.document.body.clientWidth;
+
+    let mask = "<div id='mask' style='position:absolute; z-index:9000; background-color:#000000; display:none; left:0; top:0;'></div>";
+    let loadingImg = '';
+
+    loadingImg += " <div id='loadingImg'>";
+    loadingImg += " <img src='../static/loadingimg.gif' style='position: absolute;top: 50%;left: 50%;z-index: 100;'/>";
+    loadingImg += "</div>";
+
+    $('body')
+        .append(mask)
+
+    $('#mask').css({
+        'width': maskWidth,
+        'height': maskHeight,
+        'opacity': '0.3'
+    });
+
+    $('#mask').show();
+
+    $('.loadingImg').append(loadingImg);
+    $('#loadingImg').show();
 }

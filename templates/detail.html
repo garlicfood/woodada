@@ -59,9 +59,16 @@
         let word = "{{ word }}"
         let author = "{{ user_info['profile_name'] }}"
         $(document).ready(function () {
-            {% if status=="old" %}
-                get_examples()
-            {% endif %}
+            get_examples()
+            $('.word_class').hide()
+            $('#article_type').change(function () {
+                let result = $("#article_type option:selected").val()
+                if (result === 'definition') {
+                    $('.word_class').show()
+                } else {
+                    $('.word_class').hide()
+                }
+            })
         })
 
         function save_word() {
@@ -80,7 +87,7 @@
         }
 
         function delete_word() {
-            let result = confirm("삭제 시 저장된 예문도 모두 삭제됩니다.\n정말 삭제하겠습니까?")
+            let result = confirm("단어를 삭제해도 예문은 남아있습니다.\n정말 삭제하겠습니까?")
             if (result) {
                 $.ajax({
                     type: "POST",
@@ -101,55 +108,105 @@
 
         function get_examples() {
             $("#example-list").empty()
+            $("#definition-list").empty()
+            // console.log(author)
             $.ajax({
                 type: "GET",
                 url: `/api/get_examples?word_give={{result[0].word.text}}`,
                 data: {},
                 success: function (response) {
                     let examples = response["all_sentence"];
+                    let definitions = response["all_definition"]
                     for (let i = 0; i < examples.length; i++) {
                         let example = examples[i]["sentence"];
-                        let author = examples[i]["author"];
-                        console.log(example)
-                        let html_temp = `<li id="ex-${i}"><b>${example}</b>&nbsp;&nbsp;&nbsp;by ${author}&nbsp;&nbsp;&nbsp;<a class="btn btn-outline-danger btn-sm"
+                        let writer = examples[i]["author"];
+                        {#console.log(example)#}
+                        if (writer === author) {
+                            let ex_temp = `<li id="ex-${i}"><b>${example}</b>&nbsp;&nbsp;&nbsp;by ${writer}&nbsp;&nbsp;&nbsp;<a style="margin-left: auto;" class="btn btn-outline-danger btn-sm"
                             href="javascript:delete_ex(${i})">지우기</a></li>`
-                        $("#example-list").append(html_temp)
+                            $("#example-list").append(ex_temp)
+                        } else {
+                            let ex_temp = `<li id="ex-${i}"><b>${example}</b>&nbsp;&nbsp;&nbsp;by ${writer}</li>`
+                            $("#example-list").append(ex_temp)
+                        }
+                    }
+                    // console.log(definitions)
+                    if (definitions.length !== 0) {
+                        let hr_temp = `<hr>`
+                        $("#definition-list").append(hr_temp)
+                    }
+                    for (let i = 0; i < definitions.length; i++) {
+                        let definition = definitions[i]["sentence"];
+                        let writer = definitions[i]["author"];
+                        let word_class = definitions[i]["word_class"];
+                        if (writer === author) {
+                            let def_temp = `<div style="padding:10px" id="def-${i}"><i>${word_class}</i><br><b>${definition}</b>&nbsp;&nbsp;&nbsp;by ${writer}&nbsp;&nbsp;&nbsp;<a style="margin-left: auto;" class="btn btn-outline-danger btn-sm"
+                            href="javascript:delete_def(${i})">지우기</a></div>`
+                            $("#definition-list").append(def_temp)
+                        } else {
+                            let def_temp = `<div style="padding:10px" id="def-${i}"><i>${word_class}</i><br><b>${definition}</b>&nbsp;&nbsp;&nbsp;by ${writer}</div>`
+                            $("#definition-list").append(def_temp)
+                        }
                     }
                 }
             });
         }
 
         function add_ex() {
+            let result = $("#article_type option:selected").val()
             let new_ex = $('#new-example').val();
-            if (!new_ex.toLowerCase().includes(word.toLowerCase())) {
-                alert(`'${word}'를 포함해주세요!`);
-                return;
-            }
-            console.log(new_ex)
-            $.ajax({
-                type: "POST",
-                url: `/api/save_ex`,
-                data: {
-                    word_give: word,
-                    example_give: new_ex,
-                    author_give: author
-                },
-                success: function (response) {
-                    get_examples();
-                    $('#new-example').val("");
+            let new_class_type = $("select[name=word_class] option:selected").text().replace(/\n/g, "").replace(/\s+$/g, "");
+            // console.log(new_class_type)
+            if (new_ex === "") {
+                alert("아무 내용도 찾지 못했어요 :C\n내용을 적어주세요!")
+                $("#new-example").focus()
+            } else {
+                if (result === 'example') {
+                    if (!new_ex.toLowerCase().includes(word.toLowerCase())) {
+                        alert(`'${word}'를 포함해주세요!`);
+                        return;
+                    }
+                    $.ajax({
+                        type: "POST",
+                        url: `/api/save_ex`,
+                        data: {
+                            word_give: '{{ result[0].word.text }}',
+                            example_give: new_ex,
+                            author_give: author
+                        },
+                        success: function (response) {
+                            get_examples();
+                            $('#new-example').val("");
+                        }
+                    });
+                } else {
+                    $.ajax({
+                        type: "POST",
+                        url: `/api/save_definition`,
+                        data: {
+                            word_give: '{{ result[0].word.text }}',
+                            example_give: new_ex,
+                            author_give: author,
+                            class_give: new_class_type
+                        },
+                        success: function (response) {
+                            get_examples();
+                            $('#new-example').val("");
+                        }
+                    });
                 }
-            });
+            }
         }
 
         function delete_ex(i) {
             let result = confirm("예문 삭제 시 복구할 수 없습니다.\n정말 삭제하겠습니까?")
             if (result) {
-                console.log("deleting", i)
+                {#console.log("deleting", i)#}
                 $.ajax({
                     type: "POST",
                     url: `/api/delete_ex`,
                     data: {
-                        word_give: word,
+                        word_give: '{{ result[0].word.text }}',
                         number_give: i
                     },
                     success: function (response) {
@@ -160,6 +217,26 @@
                 return;
             }
         }
+
+        function delete_def(i) {
+            let result = confirm("본문 삭제 시 복구할 수 없습니다.\n정말 삭제하겠습니까?")
+            if (result) {
+                $.ajax({
+                    type: "POST",
+                    url: `/api/delete_def`,
+                    data: {
+                        word_give: '{{ result[0].word.text }}',
+                        number_give: i
+                    },
+                    success: function (response) {
+                        get_examples()
+                    }
+                });
+            } else {
+                return;
+            }
+        }
+
     </script>
 </head>
 <body>
@@ -168,7 +245,7 @@
         <div class="local-nav-links">
             <a href="/" onclick="window.location.reload()" class="product-name">노들사전</a>
             <a href='/timeline'>타임라인</a>
-            <a href="/user/{{ user_info.username }}">정보수정</a>
+            <a href="/user/{{ user_info.username }}">내프로필</a>
             <a href="#" onclick="sign_out()">로그아웃</a>
         </div>
     </nav>
@@ -182,7 +259,7 @@
                         class="fa fa-floppy-o"
                         aria-hidden="true"></i></button>
             {% else %}
-                <button id="btn-delete" class="btn btn-norandp btn-lg" onclick="confirm_delete()"><i
+                <button id="btn-delete" class="btn btn-norandp btn-lg" onclick="delete_word()"><i
                         class="fa fa-trash-o"
                         aria-hidden="true"></i></button>
             {% endif %}
@@ -196,6 +273,7 @@
                     <br>{{ definition.sense.definition.text }}<br>
                 </div>
             {% endfor %}
+            <div id="definition-list"></div>
         </div>
     </div>
     <div class="word-box">
@@ -206,22 +284,36 @@
             {% endfor %}
         {% endif %}
     </div>
-    {% if status=="old" %}
-        <div id="examples" class="word-box">
-            <h3 style="text-align: center;margin-bottom:1rem">노란들판은 이 단어를 이렇게도 사용해요!</h3>
-            <ul id="example-list">
-                <li id="ex-0">This sentence contains the word 'word'.&nbsp;&nbsp;&nbsp;<a
-                        href="javascript:delete_ex(0)">delete</a></li>
-                <li id="ex-1">I don't like using the MS Word program.&nbsp;&nbsp;&nbsp;<a
-                        href="javascript:delete_ex(1)">delete</a></li>
-            </ul>
-            <div class="d-flex justify-content-between" style="margin-left:20px;">
-                <input id="new-example" class="form-control form-control-sm" style="margin-right: 0.5rem"
-                       onkeypress="if(event.keyCode===13){add_ex()}">
-                <button class="btn btn-outline-secondary btn-sm" onclick="add_ex()">추가</button>
-            </div>
+    <div id="examples" class="word-box">
+        <h3 style="text-align: center;margin-bottom:1rem">노란들판은 이 단어를 이렇게도 사용해요!</h3>
+        <ul id="example-list">
+            <li id="ex-0">This sentence contains the word 'word'.&nbsp;&nbsp;&nbsp;<a
+                    href="javascript:delete_ex(0)">delete</a></li>
+            <li id="ex-1">I don't like using the MS Word program.&nbsp;&nbsp;&nbsp;<a
+                    href="javascript:delete_ex(1)">delete</a></li>
+        </ul>
+        <div class="d-flex justify-content-between" style="margin-left:20px;">
+            <select style="width: auto;" id="article_type">
+                <option value="example" selected> 예문
+                <option value="definition"> 본문
+            </select>
+            <select style="margin-left: 0.5rem; width: auto;" name="word_class" id="word_class" class="word_class">
+                <option value="Noun" selected>명사
+                <option value="Pronoun">대명사
+                <option value="Numeral">수사
+                <option value="Verb">동사
+                <option value="Adjective">형용사
+                <option value="Determiner">관형사
+                <option value="Adverb">부사
+                <option value="Particle">조사
+                <option value="Interjection">감탄사
+                <option value="None">품사 없음
+            </select>
+            <input id="new-example" class="form-control form-control-sm" style="margin: 0 0.5rem 0 0.5rem"
+                   onkeypress="if(event.keyCode===13){add_ex()}">
+            <button class="btn btn-outline-secondary btn-sm" onclick="add_ex()">추가</button>
         </div>
-    {% endif %}
+    </div>
 </div>
 <script src="{{ url_for('static', filename='default.js') }}"></script>
 </body>

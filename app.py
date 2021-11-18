@@ -33,9 +33,13 @@ def main():
     except jwt.exceptions.DecodeError:
         return redirect(url_for("login", msg="로그인 정보가 존재하지 않습니다."))
 
-# todo posts username와 users username 매치시켜서 포스팅 삭제시키기
-# 자신의 홈페이지에서 삭제시켜도 괜찮을 듯
-# 예문과 본문 선택하여 추가할 수 있게 하기
+
+# todo 단어 뜻과 예문 구분해서 나오게
+# todo method exact로 받아오기(국립국어원 문제)
+# todo footer 추가하기
+# todo https://krdict.korean.go.kr/regist/commentSuggestView 처럼 챕터 나누기
+# 가나다(역순 가능하게), 최신순(역순 가능하게), 디자인팀, 작업팀, 사무팀, 경영부
+
 @app.route('/timeline')
 def home():
     token_receive = request.cookies.get('mytoken')
@@ -64,9 +68,10 @@ def user(username):
     try:
         payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
         status = (username == payload["id"])  # 내 프로필이면 True, 다른 사람 프로필 페이지면 False
+        my_username = payload["id"]
 
         user_info = db.users.find_one({"username": username}, {"_id": False})
-        return render_template('user.html', user_info=user_info, status=status)
+        return render_template('user.html', user_info=user_info, status=status, logged_one=my_username)
     except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
         return redirect(url_for("home"))
 
@@ -85,6 +90,7 @@ def sign_in():
             'id': username_receive,
             'exp': datetime.utcnow() + timedelta(seconds=60 * 60 * 24)  # 로그인 24시간 유지
         }
+        # token = jwt.encode(payload, SECRET_KEY, algorithm='HS256').decode('utf-8')
         token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')
 
         return jsonify({'result': 'success', 'token': token})
@@ -194,7 +200,7 @@ def get_posts():
             post["like_by_me"] = bool(
                 db.likes.find_one({"post_id": post["_id"], "type": "like", "username": my_username}))
 
-        return jsonify({"result": "success", "msg": "포스팅을 가져왔습니다.", "posts": posts})
+        return jsonify({"result": "success", "msg": "포스팅을 가져왔습니다.", "posts": posts, "logged_one": my_username})
     except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
         return redirect(url_for("home"))
 
@@ -270,8 +276,13 @@ def detail(keyword):
         response = requests.get(exam_url)
         soup = BeautifulSoup(response.content, 'html.parser')
         exams = soup.find_all('item')
+        sign_url = f'http://api.kcisa.kr/openapi/service/rest/meta13/getCTE01703?serviceKey=6fd81bfb-2933-4a7c-b375-073797a57610'
+        response = requests.get(sign_url)
+        soup = BeautifulSoup(response.content, 'html.parser')
+        signs = soup.find_all('items')
+        print(signs)
         return render_template("detail.html", word=keyword, result=result, status=status_receive, exams=exams,
-                               user_info=user_info)
+                               signs=signs, user_info=user_info)
     except jwt.ExpiredSignatureError:
         return redirect(url_for("login", msg="로그인 시간이 만료되었습니다."))
     except jwt.exceptions.DecodeError:
@@ -293,7 +304,7 @@ def delete_word():
     # 단어 삭제하기
     word_receive = request.form["word_give"]
     db.words.delete_one({"word": word_receive})
-    db.examples.delete_many({"word": word_receive})
+    # db.examples.delete_many({"word": word_receive})
     return jsonify({'result': 'success', 'msg': f"단어 '{word_receive}' 삭제"})
 
 
@@ -302,8 +313,10 @@ def get_exs():
     # 예문 가져오기
     word_receive = request.args.get("word_give")
     sentences = list(db.examples.find({"word": word_receive}, {'_id': False}))
+    definitions = list(db.definitions.find({"word": word_receive}, {'_id': False}))
     print(sentences)
-    return jsonify({'result': 'success', 'all_sentence': sentences})
+    print(definitions)
+    return jsonify({'result': 'success', 'all_sentence': sentences, 'all_definition': definitions})
 
 
 @app.route('/api/save_ex', methods=['POST'])
@@ -317,6 +330,18 @@ def save_ex():
     return jsonify({'result': 'success'})
 
 
+@app.route('/api/save_definition', methods=['POST'])
+def save_definition():
+    # 설명문 저장하기
+    word_receive = request.form["word_give"]
+    example_receive = request.form["example_give"]
+    author_receive = request.form["author_give"]
+    class_receive = request.form["class_give"]
+    doc = {"word": word_receive, "sentence": example_receive, "author": author_receive, "word_class": class_receive}
+    db.definitions.insert_one(doc)
+    return jsonify({'result': 'success'})
+
+
 @app.route('/api/delete_ex', methods=['POST'])
 def delete_ex():
     # 예문 삭제하기
@@ -325,6 +350,24 @@ def delete_ex():
     example = list(db.examples.find({"word": word_receive}))[number_receive]["sentence"]
     db.examples.delete_one({"word": word_receive, "sentence": example})
     return jsonify({'result': 'success'})
+
+
+@app.route('/api/delete_def', methods=['POST'])
+def delete_def():
+    # 예문 삭제하기
+    word_receive = request.form["word_give"]
+    number_receive = int(request.form["number_give"])
+    definition = list(db.definitions.find({"word": word_receive}))[number_receive]["sentence"]
+    db.definitions.delete_one({"word": word_receive, "sentence": definition})
+    return jsonify({'result': 'success'})
+
+
+@app.route('/api/delete_post', methods=['POST'])
+def delete_post():
+    post_receive = request.form['post_give']
+    time_receive = request.form['time_give']
+    db.posts.delete_one({'comment': post_receive, "date": time_receive})
+    return jsonify({'msg': '게시글이 삭제되었습니다.'})
 
 
 if __name__ == '__main__':

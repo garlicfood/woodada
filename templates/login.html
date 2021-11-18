@@ -160,6 +160,13 @@
 
         }
 
+        function press_sign_in() {
+            let box_status = ($('#sign-up-box').attr('class'));
+            if (box_status === 'is-hidden') {
+                sign_in()
+            }
+        }
+
         function sign_in() {
             let username = $("#input-username").val()
             let password = $("#input-password").val()
@@ -224,7 +231,8 @@
                         <p id="help-id-login" class="help is-danger"></p>
                         <div class="field">
                             <div class="control has-icons-left">
-                                <input id="input-password" class="input" type="password" placeholder="비밀번호">
+                                <input id="input-password" class="input" type="password"
+                                       onkeypress="if(event.keyCode===13){press_sign_in()}" placeholder="비밀번호">
                                 <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
                             </div>
                             <p id="help-password" class="help is-hidden">영문과 숫자 조합의 8-20자의 비밀번호를 설정해주세요.
@@ -256,6 +264,14 @@
                                     <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
                                 </div>
                                 <p id="help-password2" class="help is-hidden">비밀번호를 다시 한 번 입력해주세요.</p>
+                            </div>
+                                                        <div class="field">
+                                <div class="control has-icons-left" style="width:100%">
+                                    <input id="input-workernum" class="input"
+                                           placeholder="사원번호">
+                                    <span class="icon is-small is-left"><i class="fas fa-id-badge"></i></span>
+                                </div>
+                                <p id="help-workernum" class="help is-hidden">사원번호가 존재하지 않습니다.</p>
                             </div>
                         </div>
                         <nav class="level is-mobile">
