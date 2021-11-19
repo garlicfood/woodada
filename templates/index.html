@@ -15,7 +15,8 @@
           crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='{{ url_for("static", filename="default.css") }}' rel="stylesheet">
-
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -44,6 +45,7 @@
             max-width: 800px;
             margin: auto;
             table-layout: fixed;
+            background-color: RGBA(251, 174, 24, 0.2);
         }
 
         .table th {
@@ -84,6 +86,28 @@
 
         tbody:last-child tr:last-child td:last-child {
             border-radius: 0 0 10px 0;
+        }
+        .local-filter{
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+        }
+        .local-filter button{
+            border: 0.5px solid;
+            height: 2rem;
+            width: 20%;
+            background-color: white;
+            transition: background-color .2s;
+        }
+        .local-filter button:hover{
+            background-color: lightgray;
+            cursor: pointer;
+        }
+        .filter{
+            width: 80%;
+            max-width: 800px;
+            margin: auto;
+            margin-bottom: 10px;
         }
     </style>
     <script>
@@ -128,12 +152,22 @@
                onkeypress="if(event.keyCode===13){find_word()}">
         <button class="btn btn-light" onclick="find_word()"><i class="fa fa-search"></i></button>
     </div>
+    <div class="filter">
+        <nav class="local-filter">
+            <button onclick="#" style="border-radius:10px 0 0 10px">최신순</button>
+            <button onclick="#" style="border-radius:10px 0 0 10px" class="is-hidden">오래된순</button>
+            <button onclick="#">오름차순</button>
+            <button onclick="#" class="is-hidden">내림차순</button>
+            <button onclick="#">디자인팀</button>
+            <button onclick="#">사무팀</button>
+            <button onclick="#" style="border-radius:0 10px 10px 0">작업팀</button>
+        </nav>
+    </div>
     <table class="table">
         <thead class="thead-light">
         <tr>
             <th scope="col" style="width:30%">단어</th>
             <th scope="col">의미</th>
-
         </tr>
         </thead>
         <tbody id="tbody-box">
